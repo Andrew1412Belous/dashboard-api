@@ -1,14 +1,8 @@
-import http from 'http'
+import express from 'express'
 
-const host = '127.0.0.1'
-const port = 8000
+const PORT = 8000
+const app = express()
 
-const server = http.createServer((request, response) => {
-  response.statusCode = 200
-  response.setHeader('Content-Type', 'text/plain')
-  response.end('Hello')
-})
-
-server.listen(port, host, () => {
-  console.log('work')
+app.listen(PORT, () => {
+  console.log(`Server started on port: ${PORT}`)
 })
