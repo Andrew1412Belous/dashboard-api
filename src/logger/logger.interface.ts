@@ -1,9 +1,8 @@
-import { ILogObj, ISettingsParam, Logger } from 'tslog'
+import { ILogObj, Logger } from 'tslog'
 
 export class ILogger {
   logger: Logger<ILogObj>
   log: (...args: unknown[]) => void
   error: (...args: unknown[]) => void
-  warn: (...args: unknown[]) => void
 }
- 
+
