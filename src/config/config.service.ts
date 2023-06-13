@@ -12,9 +12,9 @@ export class ConfigService implements IConfigService {
 		const result: DotenvConfigOutput = config();
 
 		if (result.error) {
-			this.logger.error('File .env is not found or empty');
+			this.logger.error('[ConfigService] File .env is not found or empty');
 		} else {
-			this.logger.log('Configuration .env loaded');
+			this.logger.log('[ConfigService] Configuration .env loaded');
 			this.config = result.parsed as DotenvParseOutput;
 		}
 	}
