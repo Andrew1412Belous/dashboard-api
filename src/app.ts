@@ -6,6 +6,9 @@ import { ILogger } from './logger/logger.interface';
 import { inject, injectable } from 'inversify';
 import { TYPES } from './types';
 import 'reflect-metadata';
+import { ConfigService } from './config/config.service';
+import { IConfigService } from './config/config.service.interface';
+import { IExceptionFilter } from './errors/exception.filter.interface';
 
 @injectable()
 export class App {
@@ -16,7 +19,8 @@ export class App {
 	constructor(
 		@inject(TYPES.ILogger) private logger: ILogger,
 		@inject(TYPES.UserController) private userController: UsersController,
-		@inject(TYPES.ExceptionFilter) private exceptionFilter: ExceptionFilter,
+		@inject(TYPES.ExceptionFilter) private exceptionFilter: IExceptionFilter,
+		@inject(TYPES.ConfigService) private configService: IConfigService,
 	) {
 		this.app = express();
 		this.port = 8000;
