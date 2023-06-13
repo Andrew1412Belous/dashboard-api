@@ -2,8 +2,6 @@ import { inject, injectable } from 'inversify';
 import { TYPES } from '../types';
 import { ILogger } from '../logger/logger.interface';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
 import { PrismaClient } from '@prisma/client';
 
 @injectable()

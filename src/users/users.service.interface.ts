@@ -1,8 +1,8 @@
-import { NextFunction, Request, Response } from 'express';
 import { UserRegisterDto } from './dto/user-register.dto';
-import { User } from './user.entity';
+import { UserModel } from '@prisma/client';
+import { UserLoginDto } from './dto/user-login.dto';
 
 export class IUserService {
-	createUser: (dto: UserRegisterDto) => Promise<User | null>;
-	validateUser: (dto: UserRegisterDto) => Promise<boolean>;
+	createUser: (dto: UserRegisterDto) => Promise<UserModel | null>;
+	validateUser: (dto: UserLoginDto) => Promise<boolean>;
 }
