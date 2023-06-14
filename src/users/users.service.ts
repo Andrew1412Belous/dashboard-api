@@ -9,7 +9,7 @@ import { UserModel } from '@prisma/client';
 import { UserLoginDto } from './dto/user-login.dto';
 
 @injectable()
-export class UserService implements IUserService {
+export class UsersService implements IUserService {
 	constructor(
 		@inject(TYPES.ConfigService) private configService: IConfigService,
 		@inject(TYPES.UsersRepository) private usersRepository: IUsersRepository,

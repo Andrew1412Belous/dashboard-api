@@ -5,7 +5,7 @@ import { ExceptionFilter } from './errors/exception.filter';
 import { Container, ContainerModule, interfaces } from 'inversify';
 import { ILogger } from './logger/logger.interface';
 import { IExceptionFilter } from './errors/exception.filter.interface';
-import { UserService } from './users/user.service';
+import { UsersService } from './users/users.service';
 import { IUserController } from './users/users.controller.interface';
 import { IUserService } from './users/users.service.interface';
 
@@ -25,7 +25,7 @@ export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
 	bind<ILogger>(TYPES.ILogger).to(LoggerService).inSingletonScope();
 	bind<IExceptionFilter>(TYPES.ExceptionFilter).to(ExceptionFilter);
 	bind<IUserController>(TYPES.UserController).to(UsersController);
-	bind<IUserService>(TYPES.UserService).to(UserService);
+	bind<IUserService>(TYPES.UserService).to(UsersService);
 	bind<IConfigService>(TYPES.ConfigService).to(ConfigService).inSingletonScope();
 	bind<PrismaService>(TYPES.PrismaService).to(PrismaService).inSingletonScope();
 	bind<IUsersRepository>(TYPES.UsersRepository).to(UsersRepository).inSingletonScope();
